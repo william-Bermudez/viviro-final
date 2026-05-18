@@ -26,7 +26,7 @@ namespace viviro_final
             this.btnSiguiente.Click += new EventHandler(btnSiguiente_Click);
             this.btnCerrar.Click += new EventHandler(btnCerrar_Click);
 
-            // Navegación con teclado
+
             this.KeyPreview = true;
             this.KeyDown += new KeyEventHandler(FormGaleriaFotos_KeyDown);
         }

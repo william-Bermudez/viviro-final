@@ -101,9 +101,7 @@
             this.btnCompletado.TabIndex = 6;
             this.btnCompletado.Text = "✅ Marcar Completado";
             this.btnCompletado.UseVisualStyleBackColor = false;
-            // 
-            // btnEditar
-            // 
+
             this.btnEditar.BackColor = System.Drawing.Color.DodgerBlue;
             this.btnEditar.Font = new System.Drawing.Font("Tahoma", 10F);
             this.btnEditar.ForeColor = System.Drawing.Color.White;
@@ -113,9 +111,7 @@
             this.btnEditar.TabIndex = 7;
             this.btnEditar.Text = "✏️ Editar Tarea";
             this.btnEditar.UseVisualStyleBackColor = false;
-            // 
-            // btnEliminar
-            // 
+
             this.btnEliminar.BackColor = System.Drawing.Color.Red;
             this.btnEliminar.Font = new System.Drawing.Font("Tahoma", 10F);
             this.btnEliminar.ForeColor = System.Drawing.Color.White;
@@ -125,9 +121,7 @@
             this.btnEliminar.TabIndex = 8;
             this.btnEliminar.Text = "🗑️ Eliminar Tarea";
             this.btnEliminar.UseVisualStyleBackColor = false;
-            // 
-            // btnCerrar
-            // 
+
             this.btnCerrar.BackColor = System.Drawing.Color.Gray;
             this.btnCerrar.Font = new System.Drawing.Font("Tahoma", 10F);
             this.btnCerrar.ForeColor = System.Drawing.Color.White;
@@ -137,9 +131,7 @@
             this.btnCerrar.TabIndex = 9;
             this.btnCerrar.Text = "❌ Cerrar";
             this.btnCerrar.UseVisualStyleBackColor = false;
-            // 
-            // lblTotal
-            // 
+   
             this.lblTotal.AutoSize = true;
             this.lblTotal.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
             this.lblTotal.Location = new System.Drawing.Point(30, 565);
@@ -147,9 +139,7 @@
             this.lblTotal.Size = new System.Drawing.Size(155, 21);
             this.lblTotal.TabIndex = 10;
             this.lblTotal.Text = "📊 Total: 0 tareas";
-            // 
-            // FormGestionTareas
-            // 
+  
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(980, 610);

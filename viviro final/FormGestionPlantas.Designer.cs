@@ -32,9 +32,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvPlantas)).BeginInit();
             this.pnlFormulario.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // lblTitulo
-            // 
+   
             this.lblTitulo.AutoSize = true;
             this.lblTitulo.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Bold);
             this.lblTitulo.ForeColor = System.Drawing.Color.Green;
@@ -43,18 +41,14 @@
             this.lblTitulo.Size = new System.Drawing.Size(326, 36);
             this.lblTitulo.TabIndex = 0;
             this.lblTitulo.Text = "🌿 Gestor de Plantas";
-            // 
-            // dgvPlantas
-            // 
+     
             this.dgvPlantas.ColumnHeadersHeight = 29;
             this.dgvPlantas.Location = new System.Drawing.Point(30, 70);
             this.dgvPlantas.Name = "dgvPlantas";
             this.dgvPlantas.RowHeadersWidth = 51;
             this.dgvPlantas.Size = new System.Drawing.Size(720, 350);
             this.dgvPlantas.TabIndex = 1;
-            // 
-            // btnEditar
-            // 
+    
             this.btnEditar.BackColor = System.Drawing.Color.DodgerBlue;
             this.btnEditar.Enabled = false;
             this.btnEditar.Font = new System.Drawing.Font("Tahoma", 10F);
@@ -65,9 +59,7 @@
             this.btnEditar.TabIndex = 3;
             this.btnEditar.Text = "✏️ Editar Planta";
             this.btnEditar.UseVisualStyleBackColor = false;
-            // 
-            // btnEliminar
-            // 
+      
             this.btnEliminar.BackColor = System.Drawing.Color.Red;
             this.btnEliminar.Enabled = false;
             this.btnEliminar.Font = new System.Drawing.Font("Tahoma", 10F);
@@ -78,9 +70,7 @@
             this.btnEliminar.TabIndex = 4;
             this.btnEliminar.Text = "🗑️ Eliminar Planta";
             this.btnEliminar.UseVisualStyleBackColor = false;
-            // 
-            // btnCerrar
-            // 
+   
             this.btnCerrar.BackColor = System.Drawing.Color.Gray;
             this.btnCerrar.Font = new System.Drawing.Font("Tahoma", 10F);
             this.btnCerrar.ForeColor = System.Drawing.Color.White;
@@ -90,9 +80,7 @@
             this.btnCerrar.TabIndex = 5;
             this.btnCerrar.Text = "❌ Cerrar";
             this.btnCerrar.UseVisualStyleBackColor = false;
-            // 
-            // lblTotal
-            // 
+
             this.lblTotal.AutoSize = true;
             this.lblTotal.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
             this.lblTotal.Location = new System.Drawing.Point(30, 500);
@@ -100,9 +88,7 @@
             this.lblTotal.Size = new System.Drawing.Size(165, 21);
             this.lblTotal.TabIndex = 6;
             this.lblTotal.Text = "📊 Total: 0 plantas";
-            // 
-            // pnlFormulario
-            // 
+
             this.pnlFormulario.BackColor = System.Drawing.Color.LightGray;
             this.pnlFormulario.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlFormulario.Controls.Add(this.lblTituloForm);
@@ -117,9 +103,7 @@
             this.pnlFormulario.Size = new System.Drawing.Size(300, 300);
             this.pnlFormulario.TabIndex = 7;
             this.pnlFormulario.Visible = false;
-            // 
-            // lblTituloForm
-            // 
+ 
             this.lblTituloForm.AutoSize = true;
             this.lblTituloForm.Font = new System.Drawing.Font("Tahoma", 14F, System.Drawing.FontStyle.Bold);
             this.lblTituloForm.Location = new System.Drawing.Point(50, 24);
@@ -127,9 +111,7 @@
             this.lblTituloForm.Size = new System.Drawing.Size(204, 29);
             this.lblTituloForm.TabIndex = 0;
             this.lblTituloForm.Text = "✏️ Editar Planta";
-            // 
-            // lblNombre
-            // 
+       
             this.lblNombre.AutoSize = true;
             this.lblNombre.Font = new System.Drawing.Font("Tahoma", 10F);
             this.lblNombre.Location = new System.Drawing.Point(30, 80);
@@ -137,17 +119,13 @@
             this.lblNombre.Size = new System.Drawing.Size(154, 21);
             this.lblNombre.TabIndex = 1;
             this.lblNombre.Text = "🌿 Nombre Planta *";
-            // 
-            // txtNombrePlanta
-            // 
+     
             this.txtNombrePlanta.Font = new System.Drawing.Font("Tahoma", 10F);
             this.txtNombrePlanta.Location = new System.Drawing.Point(30, 110);
             this.txtNombrePlanta.Name = "txtNombrePlanta";
             this.txtNombrePlanta.Size = new System.Drawing.Size(240, 28);
             this.txtNombrePlanta.TabIndex = 2;
-            // 
-            // lblEspecie
-            // 
+    
             this.lblEspecie.AutoSize = true;
             this.lblEspecie.Font = new System.Drawing.Font("Tahoma", 10F);
             this.lblEspecie.Location = new System.Drawing.Point(30, 160);
@@ -155,17 +133,13 @@
             this.lblEspecie.Size = new System.Drawing.Size(88, 21);
             this.lblEspecie.TabIndex = 3;
             this.lblEspecie.Text = "🔬 Especie";
-            // 
-            // txtEspecie
-            // 
+       
             this.txtEspecie.Font = new System.Drawing.Font("Tahoma", 10F);
             this.txtEspecie.Location = new System.Drawing.Point(30, 190);
             this.txtEspecie.Name = "txtEspecie";
             this.txtEspecie.Size = new System.Drawing.Size(240, 28);
             this.txtEspecie.TabIndex = 4;
-            // 
-            // btnGuardar
-            // 
+
             this.btnGuardar.BackColor = System.Drawing.Color.Green;
             this.btnGuardar.Font = new System.Drawing.Font("Tahoma", 10F);
             this.btnGuardar.ForeColor = System.Drawing.Color.White;
@@ -175,9 +149,7 @@
             this.btnGuardar.TabIndex = 5;
             this.btnGuardar.Text = "💾 Guardar";
             this.btnGuardar.UseVisualStyleBackColor = false;
-            // 
-            // btnCancelar
-            // 
+   
             this.btnCancelar.BackColor = System.Drawing.Color.Gray;
             this.btnCancelar.Font = new System.Drawing.Font("Tahoma", 10F);
             this.btnCancelar.ForeColor = System.Drawing.Color.White;
@@ -187,9 +159,7 @@
             this.btnCancelar.TabIndex = 6;
             this.btnCancelar.Text = "❌ Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = false;
-            // 
-            // FormGestionPlantas
-            // 
+
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1100, 550);
