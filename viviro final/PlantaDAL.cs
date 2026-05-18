@@ -53,7 +53,8 @@ namespace viviro_final
                 string query = @"SELECT COUNT(*) FROM Plantas 
                                 WHERE NombrePlanta = @nombre 
                                 AND (Especie = @especie OR (Especie IS NULL AND @especie = ''))
-                                AND Id != @idExcluir";
+                                AND Id != @idExcluir
+                                AND Activo = 1";
                 MySqlParameter[] parameters = {
                     new MySqlParameter("@nombre", nombrePlanta),
                     new MySqlParameter("@especie", string.IsNullOrEmpty(especie) ? "" : especie),
@@ -70,37 +71,55 @@ namespace viviro_final
             }
         }
 
-        public static int AgregarPlanta(string nombrePlanta, string especie)
+        public static bool ActualizarPlanta(Planta planta)
         {
             try
             {
-                if (ExistePlanta(nombrePlanta, especie))
+                if (ExistePlanta(planta.NombrePlanta, planta.Especie, planta.Id))
                 {
                     System.Windows.Forms.MessageBox.Show(
-                        $"⚠️ Ya existe la planta '{nombrePlanta}' con la especie '{(string.IsNullOrEmpty(especie) ? "Sin especie" : especie)}'.",
+                        $"⚠️ Ya existe otra planta con el nombre '{planta.NombrePlanta}' y especie '{(string.IsNullOrEmpty(planta.Especie) ? "Sin especie" : planta.Especie)}'.",
                         "Planta Duplicada",
                         System.Windows.Forms.MessageBoxButtons.OK,
                         System.Windows.Forms.MessageBoxIcon.Warning);
-                    return -1;
+                    return false;
                 }
 
-                string query = "INSERT INTO Plantas (NombrePlanta, Especie) VALUES (@nombre, @especie)";
+                string query = "UPDATE Plantas SET NombrePlanta = @nombre, Especie = @especie WHERE Id = @id";
                 MySqlParameter[] parameters = {
-                    new MySqlParameter("@nombre", nombrePlanta),
-                    new MySqlParameter("@especie", string.IsNullOrEmpty(especie) ? "" : especie)
+                    new MySqlParameter("@id", planta.Id),
+                    new MySqlParameter("@nombre", planta.NombrePlanta),
+                    new MySqlParameter("@especie", string.IsNullOrEmpty(planta.Especie) ? "" : planta.Especie)
                 };
-                return DatabaseHelper.ExecuteNonQuery(query, parameters);
+                int resultado = DatabaseHelper.ExecuteNonQuery(query, parameters);
+                return resultado > 0;
             }
             catch (Exception ex)
             {
-                System.Windows.Forms.MessageBox.Show($"Error al agregar planta: {ex.Message}");
-                return -1;
+                System.Windows.Forms.MessageBox.Show($"Error al actualizar planta: {ex.Message}");
+                return false;
+            }
+        }
+
+        public static bool EliminarPlanta(int id)
+        {
+            try
+            {
+                string query = "UPDATE Plantas SET Activo = 0 WHERE Id = @id";
+                MySqlParameter[] parameters = { new MySqlParameter("@id", id) };
+                int resultado = DatabaseHelper.ExecuteNonQuery(query, parameters);
+                return resultado > 0;
+            }
+            catch (Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show($"Error al eliminar planta: {ex.Message}");
+                return false;
             }
         }
 
         public static int ObtenerIdPlanta(string nombrePlanta, string especie)
         {
-            string query = "SELECT Id FROM Plantas WHERE NombrePlanta = @nombre AND (Especie = @especie OR (Especie IS NULL AND @especie = ''))";
+            string query = "SELECT Id FROM Plantas WHERE NombrePlanta = @nombre AND (Especie = @especie OR (Especie IS NULL AND @especie = '')) AND Activo = 1";
             MySqlParameter[] parameters = {
                 new MySqlParameter("@nombre", nombrePlanta),
                 new MySqlParameter("@especie", string.IsNullOrEmpty(especie) ? "" : especie)
@@ -114,7 +133,12 @@ namespace viviro_final
             int id = ObtenerIdPlanta(nombrePlanta, especie);
             if (id == -1)
             {
-                AgregarPlanta(nombrePlanta, especie);
+                string query = "INSERT INTO Plantas (NombrePlanta, Especie) VALUES (@nombre, @especie)";
+                MySqlParameter[] parameters = {
+                    new MySqlParameter("@nombre", nombrePlanta),
+                    new MySqlParameter("@especie", string.IsNullOrEmpty(especie) ? "" : especie)
+                };
+                DatabaseHelper.ExecuteNonQuery(query, parameters);
                 id = ObtenerIdPlanta(nombrePlanta, especie);
             }
             return id;

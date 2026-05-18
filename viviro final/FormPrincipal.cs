@@ -15,13 +15,15 @@ namespace viviro_final
         public FormPrincipal()
         {
             InitializeComponent();
-            ConfigurarColumnasDataGridView();
+
             ConfigurarNotifyIcon();
             CargarTareasProximas();
             ActualizarContadores();
             IniciarTimers();
             this.dgvTareas.CellDoubleClick += new DataGridViewCellEventHandler(dgvTareas_CellDoubleClick);
         }
+
+
 
         private void dgvTareas_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -83,40 +85,7 @@ namespace viviro_final
             notifyIcon.ShowBalloonTip(5000);
         }
 
-        private void ConfigurarColumnasDataGridView()
-        {
-            dgvTareas.Columns.Clear();
-            dgvTareas.Rows.Clear();
-            dgvTareas.Columns.Add("Tipo", "Tipo");
-            dgvTareas.Columns.Add("Accion", "Acción");
-            dgvTareas.Columns.Add("Ubicacion", "Ubicación");
-            dgvTareas.Columns.Add("Prioridad", "Prioridad");
-            dgvTareas.Columns.Add("Fecha", "Fecha");
-            dgvTareas.Columns.Add("Hora", "Hora");
-            dgvTareas.Columns["Tipo"].Width = 60;
-            dgvTareas.Columns["Accion"].Width = 220;
-            dgvTareas.Columns["Ubicacion"].Width = 180;
-            dgvTareas.Columns["Prioridad"].Width = 110;
-            dgvTareas.Columns["Fecha"].Width = 220;
-            dgvTareas.Columns["Hora"].Width = 80;
-            dgvTareas.ColumnHeadersDefaultCellStyle.Font = new Font("Tahoma", 9, FontStyle.Bold);
-            dgvTareas.ColumnHeadersDefaultCellStyle.BackColor = Color.LightGreen;
-            dgvTareas.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dgvTareas.ColumnHeadersHeight = 35;
-            dgvTareas.RowTemplate.Height = 35;
-            dgvTareas.DefaultCellStyle.Font = new Font("Tahoma", 9);
-            dgvTareas.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dgvTareas.AlternatingRowsDefaultCellStyle.BackColor = Color.LightYellow;
-            dgvTareas.BackgroundColor = Color.White;
-            dgvTareas.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvTareas.AllowUserToAddRows = false;
-            dgvTareas.AllowUserToDeleteRows = false;
-            dgvTareas.ReadOnly = true;
-            dgvTareas.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None;
-            dgvTareas.RowHeadersVisible = false;
-            dgvTareas.BorderStyle = BorderStyle.Fixed3D;
-            dgvTareas.Refresh();
-        }
+   
 
         private void CargarTareasProximas()
         {
@@ -322,6 +291,17 @@ namespace viviro_final
             if (notifyIcon != null)
                 notifyIcon.Visible = false;
             base.OnFormClosing(e);
+        }
+
+        private void FormPrincipal_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnGestionarPlantas_Click(object sender, EventArgs e)
+        {
+            FormGestionPlantas form = new FormGestionPlantas();
+            form.ShowDialog();
         }
     }
 }
