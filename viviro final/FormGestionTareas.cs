@@ -21,7 +21,7 @@ namespace viviro_final
 
         private void ConfigurarEventos()
         {
-            // Asignar eventos a los botones
+   
             this.btnBuscar.Click += new EventHandler(btnBuscar_Click);
             this.btnFiltrar.Click += new EventHandler(btnFiltrar_Click);
             this.btnCompletado.Click += new EventHandler(btnCompletado_Click);
@@ -29,11 +29,9 @@ namespace viviro_final
             this.btnEliminar.Click += new EventHandler(btnEliminar_Click);
             this.btnCerrar.Click += new EventHandler(btnCerrar_Click);
 
-            // Eventos del TextBox
             this.txtBuscar.Enter += new EventHandler(txtBuscar_Enter);
             this.txtBuscar.Leave += new EventHandler(txtBuscar_Leave);
 
-            // Evento doble click
             this.dgvTareas.CellDoubleClick += new DataGridViewCellEventHandler(dgvTareas_CellDoubleClick);
         }
 
@@ -109,7 +107,7 @@ namespace viviro_final
 
                     dgvTareas.Rows[filaIndex].Tag = t.Id;
 
-                    // Colorear prioridad
+           
                     switch (t.Prioridad.ToLower())
                     {
                         case "alta":
@@ -149,7 +147,7 @@ namespace viviro_final
             }
         }
 
-        // ==================== EVENTO BUSCAR ====================
+
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             string busqueda = txtBuscar.Text.Trim().ToLower();
@@ -199,7 +197,7 @@ namespace viviro_final
             }
         }
 
-        // ==================== EVENTO FILTRAR ====================
+ 
         private void btnFiltrar_Click(object sender, EventArgs e)
         {
             string filtro = cmbFiltrar.SelectedItem?.ToString();
@@ -214,7 +212,7 @@ namespace viviro_final
             }
         }
 
-        // ==================== EVENTO MARCAR COMPLETADO ====================
+
         private void btnCompletado_Click(object sender, EventArgs e)
         {
             if (dgvTareas.SelectedRows.Count == 0)
@@ -243,7 +241,6 @@ namespace viviro_final
             }
         }
 
-        // ==================== EVENTO EDITAR ====================
         private void btnEditar_Click(object sender, EventArgs e)
         {
             if (dgvTareas.SelectedRows.Count == 0)
@@ -264,7 +261,7 @@ namespace viviro_final
             }
         }
 
-        // ==================== EVENTO ELIMINAR ====================
+
         private void btnEliminar_Click(object sender, EventArgs e)
         {
             if (dgvTareas.SelectedRows.Count == 0)
@@ -292,13 +289,13 @@ namespace viviro_final
             }
         }
 
-        // ==================== EVENTO CERRAR ====================
+
         private void btnCerrar_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        // ==================== EVENTOS DEL TEXTBOX BUSCAR ====================
+
         private void txtBuscar_Enter(object sender, EventArgs e)
         {
             if (txtBuscar.Text == "🔍 Buscar tarea...")
@@ -311,7 +308,6 @@ namespace viviro_final
                 txtBuscar.Text = "🔍 Buscar tarea...";
         }
 
-        // ==================== EVENTO DOBLE CLICK ====================
         private void dgvTareas_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)

@@ -6,7 +6,7 @@ namespace viviro_final
 {
     public static class DatabaseHelper
     {
-        // HeidiSQL usa el mismo puerto que MySQL
+       
         private static string connectionString = "Server=localhost;Port=3306;Database=ViveroShalom;Uid=root;Pwd=1234";
 
         public static MySqlConnection GetConnection()

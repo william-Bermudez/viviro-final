@@ -48,9 +48,7 @@
             this.lblTotalFotos = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pbPreview)).BeginInit();
             this.SuspendLayout();
-            // 
-            // lblTitulo
-            // 
+    
             this.lblTitulo.AutoSize = true;
             this.lblTitulo.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Bold);
             this.lblTitulo.ForeColor = System.Drawing.Color.Green;
@@ -59,9 +57,7 @@
             this.lblTitulo.Size = new System.Drawing.Size(281, 36);
             this.lblTitulo.TabIndex = 0;
             this.lblTitulo.Text = "📝 Registra Tarea";
-            // 
-            // lblNombre
-            // 
+  
             this.lblNombre.AutoSize = true;
             this.lblNombre.Font = new System.Drawing.Font("Tahoma", 10F);
             this.lblNombre.Location = new System.Drawing.Point(50, 80);
@@ -69,17 +65,13 @@
             this.lblNombre.Size = new System.Drawing.Size(195, 21);
             this.lblNombre.TabIndex = 1;
             this.lblNombre.Text = "🌿 Nombre de la Planta *";
-            // 
-            // txtNombrePlanta
-            // 
+
             this.txtNombrePlanta.Font = new System.Drawing.Font("Tahoma", 10F);
             this.txtNombrePlanta.Location = new System.Drawing.Point(300, 77);
             this.txtNombrePlanta.Name = "txtNombrePlanta";
             this.txtNombrePlanta.Size = new System.Drawing.Size(400, 28);
             this.txtNombrePlanta.TabIndex = 2;
-            // 
-            // lblEspecie
-            // 
+
             this.lblEspecie.AutoSize = true;
             this.lblEspecie.Font = new System.Drawing.Font("Tahoma", 10F);
             this.lblEspecie.Location = new System.Drawing.Point(50, 120);
@@ -87,17 +79,13 @@
             this.lblEspecie.Size = new System.Drawing.Size(171, 21);
             this.lblEspecie.TabIndex = 3;
             this.lblEspecie.Text = "🔬 Especie (Opcional)";
-            // 
-            // txtEspecie
-            // 
+
             this.txtEspecie.Font = new System.Drawing.Font("Tahoma", 10F);
             this.txtEspecie.Location = new System.Drawing.Point(300, 117);
             this.txtEspecie.Name = "txtEspecie";
             this.txtEspecie.Size = new System.Drawing.Size(400, 28);
             this.txtEspecie.TabIndex = 4;
-            // 
-            // lblTipoAccion
-            // 
+
             this.lblTipoAccion.AutoSize = true;
             this.lblTipoAccion.Font = new System.Drawing.Font("Tahoma", 10F);
             this.lblTipoAccion.Location = new System.Drawing.Point(50, 160);
@@ -105,18 +93,14 @@
             this.lblTipoAccion.Size = new System.Drawing.Size(154, 21);
             this.lblTipoAccion.TabIndex = 5;
             this.lblTipoAccion.Text = "⚡ Tipo de Acción *";
-            // 
-            // cmbTipoAccion
-            // 
+  
             this.cmbTipoAccion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbTipoAccion.Font = new System.Drawing.Font("Tahoma", 10F);
             this.cmbTipoAccion.Location = new System.Drawing.Point(300, 157);
             this.cmbTipoAccion.Name = "cmbTipoAccion";
             this.cmbTipoAccion.Size = new System.Drawing.Size(400, 29);
             this.cmbTipoAccion.TabIndex = 6;
-            // 
-            // lblPrioridad
-            // 
+ 
             this.lblPrioridad.AutoSize = true;
             this.lblPrioridad.Font = new System.Drawing.Font("Tahoma", 10F);
             this.lblPrioridad.Location = new System.Drawing.Point(50, 200);
@@ -124,18 +108,14 @@
             this.lblPrioridad.Size = new System.Drawing.Size(110, 21);
             this.lblPrioridad.TabIndex = 7;
             this.lblPrioridad.Text = "🎯 Prioridad *";
-            // 
-            // cmbPrioridad
-            // 
+ 
             this.cmbPrioridad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbPrioridad.Font = new System.Drawing.Font("Tahoma", 10F);
             this.cmbPrioridad.Location = new System.Drawing.Point(300, 197);
             this.cmbPrioridad.Name = "cmbPrioridad";
             this.cmbPrioridad.Size = new System.Drawing.Size(400, 29);
             this.cmbPrioridad.TabIndex = 8;
-            // 
-            // lblUbicacion
-            // 
+ 
             this.lblUbicacion.AutoSize = true;
             this.lblUbicacion.Font = new System.Drawing.Font("Tahoma", 10F);
             this.lblUbicacion.Location = new System.Drawing.Point(50, 240);
@@ -143,17 +123,13 @@
             this.lblUbicacion.Size = new System.Drawing.Size(116, 21);
             this.lblUbicacion.TabIndex = 9;
             this.lblUbicacion.Text = "📍 Ubicación *";
-            // 
-            // txtUbicacion
-            // 
+    
             this.txtUbicacion.Font = new System.Drawing.Font("Tahoma", 10F);
             this.txtUbicacion.Location = new System.Drawing.Point(300, 237);
             this.txtUbicacion.Name = "txtUbicacion";
             this.txtUbicacion.Size = new System.Drawing.Size(400, 28);
             this.txtUbicacion.TabIndex = 10;
-            // 
-            // lblFechaInicio
-            // 
+     
             this.lblFechaInicio.AutoSize = true;
             this.lblFechaInicio.Font = new System.Drawing.Font("Tahoma", 10F);
             this.lblFechaInicio.Location = new System.Drawing.Point(50, 280);
@@ -161,18 +137,14 @@
             this.lblFechaInicio.Size = new System.Drawing.Size(134, 21);
             this.lblFechaInicio.TabIndex = 11;
             this.lblFechaInicio.Text = "📅 Fecha Inicio *";
-            // 
-            // dtpFechaInicio
-            // 
+   
             this.dtpFechaInicio.Font = new System.Drawing.Font("Tahoma", 10F);
             this.dtpFechaInicio.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpFechaInicio.Location = new System.Drawing.Point(300, 277);
             this.dtpFechaInicio.Name = "dtpFechaInicio";
             this.dtpFechaInicio.Size = new System.Drawing.Size(200, 28);
             this.dtpFechaInicio.TabIndex = 12;
-            // 
-            // lblFechaFin
-            // 
+     
             this.lblFechaFin.AutoSize = true;
             this.lblFechaFin.Font = new System.Drawing.Font("Tahoma", 10F);
             this.lblFechaFin.Location = new System.Drawing.Point(50, 320);
@@ -180,18 +152,14 @@
             this.lblFechaFin.Size = new System.Drawing.Size(180, 21);
             this.lblFechaFin.TabIndex = 13;
             this.lblFechaFin.Text = "📅 Fecha Finalización *";
-            // 
-            // dtpFechaFin
-            // 
+     
             this.dtpFechaFin.Font = new System.Drawing.Font("Tahoma", 10F);
             this.dtpFechaFin.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpFechaFin.Location = new System.Drawing.Point(300, 317);
             this.dtpFechaFin.Name = "dtpFechaFin";
             this.dtpFechaFin.Size = new System.Drawing.Size(200, 28);
             this.dtpFechaFin.TabIndex = 14;
-            // 
-            // lblRepeticion
-            // 
+      
             this.lblRepeticion.AutoSize = true;
             this.lblRepeticion.Font = new System.Drawing.Font("Tahoma", 10F);
             this.lblRepeticion.Location = new System.Drawing.Point(50, 360);
@@ -199,18 +167,14 @@
             this.lblRepeticion.Size = new System.Drawing.Size(125, 21);
             this.lblRepeticion.TabIndex = 15;
             this.lblRepeticion.Text = "🔄 Frecuencia *";
-            // 
-            // cmbRepeticion
-            // 
+     
             this.cmbRepeticion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbRepeticion.Font = new System.Drawing.Font("Tahoma", 10F);
             this.cmbRepeticion.Location = new System.Drawing.Point(300, 357);
             this.cmbRepeticion.Name = "cmbRepeticion";
             this.cmbRepeticion.Size = new System.Drawing.Size(400, 29);
             this.cmbRepeticion.TabIndex = 16;
-            // 
-            // lblHora
-            // 
+      
             this.lblHora.AutoSize = true;
             this.lblHora.Font = new System.Drawing.Font("Tahoma", 10F);
             this.lblHora.Location = new System.Drawing.Point(50, 400);
@@ -218,9 +182,7 @@
             this.lblHora.Size = new System.Drawing.Size(80, 21);
             this.lblHora.TabIndex = 17;
             this.lblHora.Text = "⏰ Hora *";
-            // 
-            // dtpHora
-            // 
+     
             this.dtpHora.Font = new System.Drawing.Font("Tahoma", 10F);
             this.dtpHora.Format = System.Windows.Forms.DateTimePickerFormat.Time;
             this.dtpHora.Location = new System.Drawing.Point(300, 397);
@@ -228,9 +190,7 @@
             this.dtpHora.ShowUpDown = true;
             this.dtpHora.Size = new System.Drawing.Size(150, 28);
             this.dtpHora.TabIndex = 18;
-            // 
-            // lblDescripcion
-            // 
+     
             this.lblDescripcion.AutoSize = true;
             this.lblDescripcion.Font = new System.Drawing.Font("Tahoma", 10F);
             this.lblDescripcion.Location = new System.Drawing.Point(50, 440);
@@ -238,18 +198,14 @@
             this.lblDescripcion.Size = new System.Drawing.Size(117, 21);
             this.lblDescripcion.TabIndex = 19;
             this.lblDescripcion.Text = "📝 Descripción";
-            // 
-            // txtDescripcion
-            // 
+       
             this.txtDescripcion.Font = new System.Drawing.Font("Tahoma", 10F);
             this.txtDescripcion.Location = new System.Drawing.Point(300, 437);
             this.txtDescripcion.Multiline = true;
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(400, 60);
             this.txtDescripcion.TabIndex = 20;
-            // 
-            // lblFotos
-            // 
+      
             this.lblFotos.AutoSize = true;
             this.lblFotos.Font = new System.Drawing.Font("Tahoma", 10F);
             this.lblFotos.Location = new System.Drawing.Point(50, 515);
@@ -257,18 +213,14 @@
             this.lblFotos.Size = new System.Drawing.Size(155, 21);
             this.lblFotos.TabIndex = 21;
             this.lblFotos.Text = "🖼️ Fotos (Opcional)";
-            // 
-            // txtFotos
-            // 
+    
             this.txtFotos.Font = new System.Drawing.Font("Tahoma", 10F);
             this.txtFotos.Location = new System.Drawing.Point(300, 512);
             this.txtFotos.Name = "txtFotos";
             this.txtFotos.ReadOnly = true;
             this.txtFotos.Size = new System.Drawing.Size(200, 28);
             this.txtFotos.TabIndex = 22;
-            // 
-            // btnGuardar
-            // 
+     
             this.btnGuardar.BackColor = System.Drawing.Color.Green;
             this.btnGuardar.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
             this.btnGuardar.ForeColor = System.Drawing.Color.White;
@@ -278,9 +230,7 @@
             this.btnGuardar.TabIndex = 30;
             this.btnGuardar.Text = "💾 Guardar Tarea";
             this.btnGuardar.UseVisualStyleBackColor = false;
-            // 
-            // btnSeleccionarFotos
-            // 
+     
             this.btnSeleccionarFotos.BackColor = System.Drawing.Color.DodgerBlue;
             this.btnSeleccionarFotos.Font = new System.Drawing.Font("Tahoma", 9F);
             this.btnSeleccionarFotos.ForeColor = System.Drawing.Color.White;
@@ -290,9 +240,7 @@
             this.btnSeleccionarFotos.TabIndex = 23;
             this.btnSeleccionarFotos.Text = "📁 Seleccionar";
             this.btnSeleccionarFotos.UseVisualStyleBackColor = false;
-            // 
-            // pbPreview
-            // 
+      
             this.pbPreview.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pbPreview.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbPreview.Location = new System.Drawing.Point(588, 546);
@@ -301,9 +249,7 @@
             this.pbPreview.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbPreview.TabIndex = 24;
             this.pbPreview.TabStop = false;
-            // 
-            // lblPreview
-            // 
+      
             this.lblPreview.AutoSize = true;
             this.lblPreview.Font = new System.Drawing.Font("Tahoma", 8F);
             this.lblPreview.Location = new System.Drawing.Point(618, 523);
@@ -312,9 +258,7 @@
             this.lblPreview.TabIndex = 25;
             this.lblPreview.Text = "Vista previa:";
             this.lblPreview.Click += new System.EventHandler(this.lblPreview_Click);
-            // 
-            // btnAnterior
-            // 
+       
             this.btnAnterior.BackColor = System.Drawing.Color.Gray;
             this.btnAnterior.Enabled = false;
             this.btnAnterior.Font = new System.Drawing.Font("Tahoma", 8F);
@@ -325,9 +269,7 @@
             this.btnAnterior.TabIndex = 26;
             this.btnAnterior.Text = "◀";
             this.btnAnterior.UseVisualStyleBackColor = false;
-            // 
-            // btnSiguiente
-            // 
+      
             this.btnSiguiente.BackColor = System.Drawing.Color.Gray;
             this.btnSiguiente.Enabled = false;
             this.btnSiguiente.Font = new System.Drawing.Font("Tahoma", 8F);
@@ -338,9 +280,7 @@
             this.btnSiguiente.TabIndex = 27;
             this.btnSiguiente.Text = "▶";
             this.btnSiguiente.UseVisualStyleBackColor = false;
-            // 
-            // lblInfoFotos
-            // 
+     
             this.lblInfoFotos.AutoSize = true;
             this.lblInfoFotos.Font = new System.Drawing.Font("Tahoma", 8F);
             this.lblInfoFotos.Location = new System.Drawing.Point(571, 625);
@@ -348,9 +288,7 @@
             this.lblInfoFotos.Size = new System.Drawing.Size(167, 17);
             this.lblInfoFotos.TabIndex = 28;
             this.lblInfoFotos.Text = "📷 Sin fotos seleccionadas";
-            // 
-            // lblTotalFotos
-            // 
+     
             this.lblTotalFotos.AutoSize = true;
             this.lblTotalFotos.Font = new System.Drawing.Font("Tahoma", 8F);
             this.lblTotalFotos.Location = new System.Drawing.Point(588, 652);
@@ -358,9 +296,7 @@
             this.lblTotalFotos.Size = new System.Drawing.Size(90, 17);
             this.lblTotalFotos.TabIndex = 29;
             this.lblTotalFotos.Text = "Total: 0 fotos";
-            // 
-            // FormRegistrarTarea
-            // 
+ 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(750, 687);

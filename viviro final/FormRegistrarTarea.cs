@@ -13,7 +13,6 @@ namespace viviro_final
         private List<string> listaFotos = new List<string>();
         private int fotoActualIndex = 0;
 
-        // Constructor para CREAR nueva tarea
         public FormRegistrarTarea()
         {
             InitializeComponent();
@@ -21,7 +20,7 @@ namespace viviro_final
             ConfigurarEventos();
         }
 
-        // Constructor para EDITAR tarea existente
+   
         public FormRegistrarTarea(Tarea tarea)
         {
             InitializeComponent();
@@ -73,7 +72,6 @@ namespace viviro_final
             dtpHora.Value = DateTime.Today.Add(tarea.HoraRecuerdo);
             txtDescripcion.Text = tarea.Descripcion;
 
-            // Cargar múltiples fotos guardadas (separadas por ;)
             if (!string.IsNullOrEmpty(tarea.Fotos))
             {
                 listaFotos = tarea.Fotos.Split(';').Where(f => File.Exists(f)).ToList();
@@ -89,7 +87,7 @@ namespace viviro_final
             btnGuardar.Text = "📝 Actualizar Tarea";
         }
 
-        // ==================== SELECCIONAR MÚLTIPLES FOTOS ====================
+   
         private void btnSeleccionarFotos_Click(object sender, EventArgs e)
         {
             using (OpenFileDialog openFileDialog = new OpenFileDialog())
@@ -159,7 +157,6 @@ namespace viviro_final
                 lblTotalFotos.Text = $"Total: {listaFotos.Count} foto(s)";
         }
 
-        // ==================== NAVEGACIÓN ENTRE FOTOS ====================
         private void btnAnterior_Click(object sender, EventArgs e)
         {
             if (fotoActualIndex > 0)
@@ -178,7 +175,7 @@ namespace viviro_final
             }
         }
 
-        // ==================== ABRIR GALERÍA COMPLETA ====================
+ 
         private void pbPreview_Click(object sender, EventArgs e)
         {
             if (listaFotos.Count > 0)
@@ -193,7 +190,7 @@ namespace viviro_final
             }
         }
 
-        // ==================== VALIDAR CAMPOS ====================
+ 
         private bool ValidarCampos()
         {
             if (string.IsNullOrWhiteSpace(txtNombrePlanta.Text))
@@ -241,7 +238,7 @@ namespace viviro_final
             return true;
         }
 
-        // ==================== GUARDAR TAREA ====================
+   
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             if (!ValidarCampos())
@@ -287,7 +284,7 @@ namespace viviro_final
             }
         }
 
-        // ==================== VALIDAR SOLO LETRAS ====================
+
         private void txtNombrePlanta_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar))

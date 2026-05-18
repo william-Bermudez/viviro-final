@@ -23,7 +23,7 @@ namespace viviro_final
 
         private void ConfigurarEventos()
         {
-            // El PictureBox se llama pbFoto, NO pbPreview
+     
             this.pbFoto.Click += new EventHandler(pbFoto_Click);
             this.btnAnterior.Click += new EventHandler(btnAnterior_Click);
             this.btnSiguiente.Click += new EventHandler(btnSiguiente_Click);
@@ -34,16 +34,15 @@ namespace viviro_final
         {
             try
             {
-                // Título
                 lblTitulo.Text = $"📋 {tarea.TipoAccion} de {tarea.NombrePlanta}";
 
-                // Información general
+           
                 lblNombreValor.Text = tarea.NombrePlanta;
                 lblEspecieValor.Text = string.IsNullOrEmpty(tarea.Especie) ? "No especificada" : tarea.Especie;
                 lblAccionValor.Text = tarea.TipoAccion;
                 lblUbicacionValor.Text = tarea.Ubicacion;
 
-                // Prioridad con color
+            
                 lblPrioridadValor.Text = tarea.Prioridad;
                 switch (tarea.Prioridad.ToLower())
                 {
@@ -61,7 +60,7 @@ namespace viviro_final
                         break;
                 }
 
-                // Fechas con validación
+              
                 try
                 {
                     lblFechaInicioValor.Text = tarea.FechaInicio.ToString("dddd, dd 'de' MMMM 'de' yyyy");
@@ -91,17 +90,16 @@ namespace viviro_final
 
                 lblRepeticionValor.Text = tarea.Repeticion;
 
-                // Descripción
                 lblDescripcionValor.Text = string.IsNullOrEmpty(tarea.Descripcion) ? "Sin descripción" : tarea.Descripcion;
 
-                // Estado
+               
                 lblEstadoValor.Text = tarea.Completado ? "✅ Completada" : "⏳ Pendiente";
                 lblEstadoValor.ForeColor = tarea.Completado ? Color.Green : Color.Orange;
 
-                // ==================== CARGAR MÚLTIPLES FOTOS ====================
+             
                 if (!string.IsNullOrEmpty(tarea.Fotos))
                 {
-                    // Separar las rutas de fotos por ';'
+                   
                     listaFotos = tarea.Fotos.Split(';').Where(f => File.Exists(f)).ToList();
 
                     if (listaFotos.Count > 0)
@@ -172,7 +170,7 @@ namespace viviro_final
             lblTotalFotos.Text = $"Total: {listaFotos.Count} foto(s)";
         }
 
-        // ==================== NAVEGACIÓN ENTRE FOTOS ====================
+    
         private void btnAnterior_Click(object sender, EventArgs e)
         {
             if (fotoActualIndex > 0)
@@ -191,15 +189,14 @@ namespace viviro_final
             }
         }
 
-        // ==================== ABRIR GALERÍA COMPLETA ====================
-        // ✅ Este es el método CORRECTO - se llama pbFoto_Click, NO pbPreview_Click
+
         private void pbFoto_Click(object sender, EventArgs e)
         {
             if (listaFotos.Count > 0)
             {
                 FormGaleriaFotos galeria = new FormGaleriaFotos(listaFotos, fotoActualIndex);
                 galeria.ShowDialog();
-                MostrarFotoActual(); // Actualizar al volver
+                MostrarFotoActual(); 
             }
             else
             {
@@ -213,6 +210,11 @@ namespace viviro_final
         }
 
         private void btnCerrar_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FormResumenTarea_Load(object sender, EventArgs e)
         {
 
         }

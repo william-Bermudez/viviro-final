@@ -28,9 +28,7 @@
             this.lblTotal = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTareas)).BeginInit();
             this.SuspendLayout();
-            // 
-            // lblTitulo
-            // 
+      
             this.lblTitulo.AutoSize = true;
             this.lblTitulo.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Bold);
             this.lblTitulo.ForeColor = System.Drawing.Color.Green;
@@ -39,18 +37,14 @@
             this.lblTitulo.Size = new System.Drawing.Size(319, 36);
             this.lblTitulo.TabIndex = 0;
             this.lblTitulo.Text = "📋 Gestor De Tareas";
-            // 
-            // txtBuscar
-            // 
+         
             this.txtBuscar.Font = new System.Drawing.Font("Tahoma", 10F);
             this.txtBuscar.Location = new System.Drawing.Point(30, 80);
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(250, 28);
             this.txtBuscar.TabIndex = 1;
             this.txtBuscar.Text = "🔍 Buscar tarea...";
-            // 
-            // btnBuscar
-            // 
+       
             this.btnBuscar.BackColor = System.Drawing.Color.DodgerBlue;
             this.btnBuscar.Font = new System.Drawing.Font("Tahoma", 9F);
             this.btnBuscar.ForeColor = System.Drawing.Color.White;
@@ -60,9 +54,7 @@
             this.btnBuscar.TabIndex = 2;
             this.btnBuscar.Text = "🔍 Buscar";
             this.btnBuscar.UseVisualStyleBackColor = false;
-            // 
-            // cmbFiltrar
-            // 
+         
             this.cmbFiltrar.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbFiltrar.Font = new System.Drawing.Font("Tahoma", 10F);
             this.cmbFiltrar.Items.AddRange(new object[] {
@@ -74,9 +66,7 @@
             this.cmbFiltrar.Name = "cmbFiltrar";
             this.cmbFiltrar.Size = new System.Drawing.Size(150, 29);
             this.cmbFiltrar.TabIndex = 3;
-            // 
-            // btnFiltrar
-            // 
+         
             this.btnFiltrar.BackColor = System.Drawing.Color.Orange;
             this.btnFiltrar.Font = new System.Drawing.Font("Tahoma", 9F);
             this.btnFiltrar.ForeColor = System.Drawing.Color.White;
@@ -86,9 +76,7 @@
             this.btnFiltrar.TabIndex = 4;
             this.btnFiltrar.Text = "📊 Filtrar";
             this.btnFiltrar.UseVisualStyleBackColor = false;
-            // 
-            // dgvTareas
-            // 
+     
             this.dgvTareas.AllowUserToAddRows = false;
             this.dgvTareas.AllowUserToDeleteRows = false;
             this.dgvTareas.BackgroundColor = System.Drawing.Color.White;
@@ -103,8 +91,7 @@
             this.dgvTareas.Size = new System.Drawing.Size(920, 350);
             this.dgvTareas.TabIndex = 5;
           
-            // btnCompletado
-            // 
+   
             this.btnCompletado.BackColor = System.Drawing.Color.Green;
             this.btnCompletado.Font = new System.Drawing.Font("Tahoma", 10F);
             this.btnCompletado.ForeColor = System.Drawing.Color.White;

@@ -14,7 +14,7 @@ namespace viviro_final
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            // Validar campos vacíos
+  
             if (string.IsNullOrWhiteSpace(txtUsuario.Text))
             {
                 MessageBox.Show("❌ Debe ingresar el usuario", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -29,7 +29,6 @@ namespace viviro_final
                 return;
             }
 
-            // Validar credenciales en la base de datos
             if (ValidarUsuario(txtUsuario.Text.Trim(), txtPassword.Text))
             {
                 FormPrincipal main = new FormPrincipal();
@@ -68,7 +67,7 @@ namespace viviro_final
             }
         }
 
-        // Presionar Enter en el campo usuario lleva al campo contraseña
+  
         private void txtUsuario_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == (char)Keys.Enter)
@@ -77,7 +76,6 @@ namespace viviro_final
             }
         }
 
-        // Presionar Enter en el campo contraseña ejecuta el login
         private void txtPassword_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == (char)Keys.Enter)

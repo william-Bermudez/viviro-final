@@ -20,6 +20,39 @@ namespace viviro_final
             CargarTareasProximas();
             ActualizarContadores();
             IniciarTimers();
+            this.dgvTareas.CellDoubleClick += new DataGridViewCellEventHandler(dgvTareas_CellDoubleClick);
+        }
+
+        private void dgvTareas_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                string nombreCompleto = dgvTareas.Rows[e.RowIndex].Cells["Accion"].Value.ToString();
+                string nombrePlanta = "";
+                foreach (var accion in new[] { "Riego de ", "Abonar de ", "Poda de ", "Siembra de ", "Trasplante de ", "Fumigación de " })
+                {
+                    if (nombreCompleto.StartsWith(accion))
+                    {
+                        nombrePlanta = nombreCompleto.Substring(accion.Length);
+                        break;
+                    }
+                }
+                if (string.IsNullOrEmpty(nombrePlanta))
+                {
+                    nombrePlanta = nombreCompleto;
+                }
+                var todasTareas = TareaDAL.ObtenerTareas();
+                var tarea = todasTareas.FirstOrDefault(t => t.NombrePlanta == nombrePlanta && !t.Completado);
+                if (tarea != null)
+                {
+                    FormResumenTarea resumen = new FormResumenTarea(tarea);
+                    resumen.ShowDialog();
+                }
+                else
+                {
+                    MessageBox.Show("No se encontró la tarea seleccionada", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
         }
 
         private void ConfigurarNotifyIcon()
@@ -30,17 +63,14 @@ namespace viviro_final
             notifyIcon.Text = "Vivero Shalom - Gestor de Tareas";
             notifyIcon.BalloonTipTitle = "📢 Vivero Shalom";
             notifyIcon.BalloonTipIcon = ToolTipIcon.Info;
-
             contextMenu = new ContextMenuStrip();
             ToolStripMenuItem itemAbrir = new ToolStripMenuItem("📋 Abrir Vivero");
             itemAbrir.Click += (s, e) => { this.WindowState = FormWindowState.Normal; this.BringToFront(); };
             ToolStripMenuItem itemCerrar = new ToolStripMenuItem("❌ Cerrar");
             itemCerrar.Click += (s, e) => { notifyIcon.Visible = false; Application.Exit(); };
-
             contextMenu.Items.Add(itemAbrir);
             contextMenu.Items.Add(new ToolStripSeparator());
             contextMenu.Items.Add(itemCerrar);
-
             notifyIcon.ContextMenuStrip = contextMenu;
             notifyIcon.DoubleClick += (s, e) => { this.WindowState = FormWindowState.Normal; this.BringToFront(); };
         }
@@ -57,33 +87,27 @@ namespace viviro_final
         {
             dgvTareas.Columns.Clear();
             dgvTareas.Rows.Clear();
-
             dgvTareas.Columns.Add("Tipo", "Tipo");
             dgvTareas.Columns.Add("Accion", "Acción");
             dgvTareas.Columns.Add("Ubicacion", "Ubicación");
             dgvTareas.Columns.Add("Prioridad", "Prioridad");
             dgvTareas.Columns.Add("Fecha", "Fecha");
             dgvTareas.Columns.Add("Hora", "Hora");
-
             dgvTareas.Columns["Tipo"].Width = 60;
             dgvTareas.Columns["Accion"].Width = 220;
             dgvTareas.Columns["Ubicacion"].Width = 180;
             dgvTareas.Columns["Prioridad"].Width = 110;
             dgvTareas.Columns["Fecha"].Width = 220;
             dgvTareas.Columns["Hora"].Width = 80;
-
             dgvTareas.ColumnHeadersDefaultCellStyle.Font = new Font("Tahoma", 9, FontStyle.Bold);
             dgvTareas.ColumnHeadersDefaultCellStyle.BackColor = Color.LightGreen;
             dgvTareas.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgvTareas.ColumnHeadersHeight = 35;
-
             dgvTareas.RowTemplate.Height = 35;
             dgvTareas.DefaultCellStyle.Font = new Font("Tahoma", 9);
             dgvTareas.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
-
             dgvTareas.AlternatingRowsDefaultCellStyle.BackColor = Color.LightYellow;
             dgvTareas.BackgroundColor = Color.White;
-
             dgvTareas.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvTareas.AllowUserToAddRows = false;
             dgvTareas.AllowUserToDeleteRows = false;
@@ -91,7 +115,6 @@ namespace viviro_final
             dgvTareas.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None;
             dgvTareas.RowHeadersVisible = false;
             dgvTareas.BorderStyle = BorderStyle.Fixed3D;
-
             dgvTareas.Refresh();
         }
 
@@ -101,36 +124,29 @@ namespace viviro_final
             {
                 dgvTareas.Rows.Clear();
                 dgvTareas.Refresh();
-
                 DateTime hoy = DateTime.Now.Date;
                 DateTime finSemana = hoy.AddDays(7);
-
                 var todasTareas = TareaDAL.ObtenerTareas();
-
                 if (todasTareas == null || todasTareas.Count == 0)
                 {
                     dgvTareas.Rows.Add("📋", "No hay tareas registradas", "---", "---", "---", "---");
                     return;
                 }
-
                 var tareasSemana = todasTareas
                     .Where(t => t.Completado == false && t.FechaInicio.Date >= hoy && t.FechaInicio.Date <= finSemana)
                     .OrderBy(t => t.FechaInicio)
                     .ThenBy(t => t.HoraRecuerdo)
                     .ToList();
-
                 if (tareasSemana.Count == 0)
                 {
                     dgvTareas.Rows.Add("📅", "No hay tareas para esta semana", "---", "---", "---", "---");
                     return;
                 }
-
                 foreach (var tarea in tareasSemana)
                 {
                     string iconoAccion = ObtenerIconoPorAccion(tarea.TipoAccion);
                     int diasRestantes = (tarea.FechaInicio - hoy).Days;
                     string fechaConDias = $"{tarea.FechaInicio:dd/MM/yyyy} (en {diasRestantes} día{(diasRestantes != 1 ? "s" : "")})";
-
                     int filaIndex = dgvTareas.Rows.Add(
                         iconoAccion,
                         tarea.TipoAccion + " de " + tarea.NombrePlanta,
@@ -139,7 +155,6 @@ namespace viviro_final
                         fechaConDias,
                         tarea.HoraRecuerdo.ToString(@"hh\:mm")
                     );
-
                     switch (tarea.Prioridad.ToLower())
                     {
                         case "alta":
@@ -158,7 +173,6 @@ namespace viviro_final
                             break;
                     }
                 }
-
                 dgvTareas.Refresh();
                 dgvTareas.Update();
             }
@@ -188,10 +202,8 @@ namespace viviro_final
             {
                 int totalPlantas = TareaDAL.ContarPlantasTotales();
                 int tareasPendientes = TareaDAL.ContarTareasPendientes();
-
                 lblTotalPlantas.Text = $"🌱 Plantas Totales: [{totalPlantas}]";
                 lblPendientes.Text = $"⏰ Tareas Pendientes: [{tareasPendientes}]";
-
                 if (tareasPendientes > 10)
                 {
                     lblPendientes.ForeColor = Color.Red;
@@ -221,7 +233,6 @@ namespace viviro_final
             timerNotificaciones.Interval = 30000;
             timerNotificaciones.Tick += TimerNotificaciones_Tick;
             timerNotificaciones.Start();
-
             timerActualizarContadores = new Timer();
             timerActualizarContadores.Interval = 30000;
             timerActualizarContadores.Tick += TimerActualizarContadores_Tick;
@@ -240,13 +251,11 @@ namespace viviro_final
                 var ahora = DateTime.Now;
                 var todasTareas = TareaDAL.ObtenerTareas();
                 var tareasHoy = todasTareas.Where(t => !t.Completado && t.FechaInicio.Date == ahora.Date).ToList();
-
                 foreach (var tarea in tareasHoy)
                 {
                     TimeSpan horaTarea = tarea.HoraRecuerdo;
                     TimeSpan horaActual = ahora.TimeOfDay;
                     TimeSpan diferencia = horaTarea - horaActual;
-
                     if (diferencia.TotalSeconds > 0 && diferencia.TotalSeconds <= 90)
                     {
                         MostrarNotificacion(

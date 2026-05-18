@@ -22,9 +22,7 @@
             this.lblInfo = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pbFotoGrande)).BeginInit();
             this.SuspendLayout();
-            // 
-            // pbFotoGrande
-            // 
+      
             this.pbFotoGrande.BackColor = System.Drawing.Color.Black;
             this.pbFotoGrande.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pbFotoGrande.Location = new System.Drawing.Point(0, 0);
@@ -33,9 +31,7 @@
             this.pbFotoGrande.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbFotoGrande.TabIndex = 0;
             this.pbFotoGrande.TabStop = false;
-            // 
-            // btnAnterior
-            // 
+   
             this.btnAnterior.BackColor = System.Drawing.Color.Black;
             this.btnAnterior.Font = new System.Drawing.Font("Tahoma", 20F, System.Drawing.FontStyle.Bold);
             this.btnAnterior.ForeColor = System.Drawing.Color.White;
@@ -45,9 +41,7 @@
             this.btnAnterior.TabIndex = 1;
             this.btnAnterior.Text = "◀";
             this.btnAnterior.UseVisualStyleBackColor = false;
-            // 
-            // btnSiguiente
-            // 
+     
             this.btnSiguiente.BackColor = System.Drawing.Color.Black;
             this.btnSiguiente.Font = new System.Drawing.Font("Tahoma", 20F, System.Drawing.FontStyle.Bold);
             this.btnSiguiente.ForeColor = System.Drawing.Color.White;
@@ -57,9 +51,6 @@
             this.btnSiguiente.TabIndex = 2;
             this.btnSiguiente.Text = "▶";
             this.btnSiguiente.UseVisualStyleBackColor = false;
-            // 
-            // btnCerrar
-            // 
             this.btnCerrar.BackColor = System.Drawing.Color.Red;
             this.btnCerrar.Font = new System.Drawing.Font("Tahoma", 10F);
             this.btnCerrar.ForeColor = System.Drawing.Color.White;
@@ -69,9 +60,7 @@
             this.btnCerrar.TabIndex = 3;
             this.btnCerrar.Text = "❌ Cerrar";
             this.btnCerrar.UseVisualStyleBackColor = false;
-            // 
-            // lblInfo
-            // 
+       
             this.lblInfo.BackColor = System.Drawing.Color.Black;
             this.lblInfo.Font = new System.Drawing.Font("Tahoma", 10F);
             this.lblInfo.ForeColor = System.Drawing.Color.White;
@@ -81,9 +70,7 @@
             this.lblInfo.TabIndex = 4;
             this.lblInfo.Text = "📷 Foto 1 de 10";
             this.lblInfo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // FormGaleriaFotos
-            // 
+      
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 500);

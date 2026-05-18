@@ -83,7 +83,6 @@ namespace viviro_final
             this.Close();
         }
 
-        // Navegación con teclas de flecha
         private void FormGaleriaFotos_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Left)

@@ -386,7 +386,8 @@
             this.Controls.Add(this.lblTitulo);
             this.Name = "FormResumenTarea";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "📋 Resumen de Tarea - Vivero Shalom";
+            this.Text = "Resumen de Tarea - Vivero Shalom";
+            this.Load += new System.EventHandler(this.FormResumenTarea_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbFoto)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

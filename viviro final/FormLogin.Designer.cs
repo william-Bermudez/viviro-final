@@ -22,9 +22,7 @@
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.btnLogin = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // lblBienvenido
-            // 
+         
             this.lblBienvenido.AutoSize = true;
             this.lblBienvenido.Font = new System.Drawing.Font("Tahoma", 20F, System.Drawing.FontStyle.Bold);
             this.lblBienvenido.ForeColor = System.Drawing.Color.Green;
@@ -33,9 +31,7 @@
             this.lblBienvenido.Size = new System.Drawing.Size(200, 41);
             this.lblBienvenido.TabIndex = 0;
             this.lblBienvenido.Text = "Bienvenido";
-            // 
-            // lblUsuario
-            // 
+        
             this.lblUsuario.AutoSize = true;
             this.lblUsuario.Font = new System.Drawing.Font("Tahoma", 10F);
             this.lblUsuario.Location = new System.Drawing.Point(70, 120);
@@ -43,18 +39,14 @@
             this.lblUsuario.Size = new System.Drawing.Size(76, 21);
             this.lblUsuario.TabIndex = 1;
             this.lblUsuario.Text = "Usuario";
-            // 
-            // txtUsuario
-            // 
+      
             this.txtUsuario.Font = new System.Drawing.Font("Tahoma", 10F);
             this.txtUsuario.Location = new System.Drawing.Point(180, 117);
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(200, 28);
             this.txtUsuario.TabIndex = 2;
             this.txtUsuario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtUsuario_KeyPress);
-            // 
-            // lblPassword
-            // 
+      
             this.lblPassword.AutoSize = true;
             this.lblPassword.Font = new System.Drawing.Font("Tahoma", 10F);
             this.lblPassword.Location = new System.Drawing.Point(70, 170);
@@ -62,9 +54,7 @@
             this.lblPassword.Size = new System.Drawing.Size(96, 21);
             this.lblPassword.TabIndex = 3;
             this.lblPassword.Text = "Contraseña";
-            // 
-            // txtPassword
-            // 
+    
             this.txtPassword.Font = new System.Drawing.Font("Tahoma", 10F);
             this.txtPassword.Location = new System.Drawing.Point(180, 167);
             this.txtPassword.Name = "txtPassword";
@@ -72,9 +62,7 @@
             this.txtPassword.Size = new System.Drawing.Size(200, 28);
             this.txtPassword.TabIndex = 4;
             this.txtPassword.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPassword_KeyPress);
-            // 
-            // btnLogin
-            // 
+ 
             this.btnLogin.BackColor = System.Drawing.Color.Green;
             this.btnLogin.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
             this.btnLogin.ForeColor = System.Drawing.Color.White;
@@ -85,9 +73,7 @@
             this.btnLogin.Text = "Iniciar Sesión";
             this.btnLogin.UseVisualStyleBackColor = false;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
-            // 
-            // FormLogin
-            // 
+      
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(500, 320);
